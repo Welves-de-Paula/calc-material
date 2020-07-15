@@ -1,6 +1,6 @@
 <template>
   <v-app>
-      Calculo avançado
+      Calculo avançado u
     <v-row>
       <v-list>
         <v-row>
