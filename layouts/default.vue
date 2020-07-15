@@ -5,10 +5,10 @@
       <v-spacer />
       <v-row>
         <v-tabs background-color="light-green accent-3">
-          <v-tab @click="$router.push('/')">HOME</v-tab>
+          <v-tab @click="$router.push('/HOME')">HOME</v-tab>
           <v-tab @click="$router.push('/cimento')">Calculo avançado</v-tab>
 
-          <v-tab @click="$router.push('/piso')">Pisos</v-tab>
+          <v-tab @click="$router.push('/pisos')">Pisos</v-tab>
           <v-tab @click="$router.push('/rejunte')">Rejuntes</v-tab>
           <v-tab @click="$router.push('/telhas')">telhas</v-tab>
           <v-tab @click="$router.push('/tijolos')">Tijolos</v-tab>

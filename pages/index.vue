@@ -1,17 +1,17 @@
 <template>
-  <v-app>
-    <span>Apex Software</span>
-    <span>Casa das Tintas</span>
+<img src="~/assets/stroi_materialy.png">
 
-  </v-app>
+
+
+
 </template>
 
 <script>
 export default {
-  components: {},
 
-  data() {
-    return {};
-  }
-};
+}
 </script>
+
+<style>
+
+</style>
