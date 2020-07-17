@@ -1,5 +1,4 @@
 <template>
-<img src="~/assets/stroi_materialy.png">
 
 
 
