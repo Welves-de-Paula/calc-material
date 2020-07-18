@@ -63,56 +63,47 @@ export default {
     data: () => ({
         drawer: null,
         items: [{
-                icon: 'lightbulb_outline',
+                // icon: 'lightbulb_outline',
                 text: 'Notes'
             },
             {
-                icon: 'touch_app',
+                // icon: 'touch_app',
                 text: 'Reminders'
             },
             {
                 divider: true
             },
+          
             {
-                heading: 'Labels'
+                // icon: 'add',
+                text: 'Calculo avançado'
+            },
+          
+           
+            {
+                // icon: 'delete',
+                text: 'cimento'
+            },
+           
+            {
+                // icon: 'settings',
+                text: 'Pisos'
             },
             {
-                icon: 'add',
-                text: 'Create new label'
+                // icon: 'chat_bubble',
+                text: 'Rejuntes'
             },
             {
-                divider: true
+                // icon: 'help',
+                text: 'telhas'
             },
             {
-                icon: 'archive',
-                text: 'Archive'
+                // icon: 'phonelink',
+                text: 'Tijolos'
             },
             {
-                icon: 'delete',
-                text: 'Trash'
-            },
-            {
-                divider: true
-            },
-            {
-                icon: 'settings',
-                text: 'Settings'
-            },
-            {
-                icon: 'chat_bubble',
-                text: 'Trash'
-            },
-            {
-                icon: 'help',
-                text: 'Help'
-            },
-            {
-                icon: 'phonelink',
-                text: 'App downloads'
-            },
-            {
-                icon: 'keyboard',
-                text: 'Keyboard shortcuts'
+                // icon: 'keyboard',
+                text: 'Tintas'
             },
         ],
     }),
