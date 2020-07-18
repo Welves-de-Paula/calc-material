@@ -1,58 +1,126 @@
 <template>
-  <v-app>
-    <v-app-bar color="light-green accent-3" :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-row>
-        <v-tabs background-color="light-green accent-3">
-          <v-tab @click="$router.push('/HOME')">HOME</v-tab>
-          <v-tab @click="$router.push('/calc')">Calculo avançado</v-tab>
-          <v-tab @click="$router.push('/cimento')">cimento</v-tab>
-          <v-tab @click="$router.push('/pisos')">Pisos</v-tab>
-          <v-tab @click="$router.push('/rejunte')">Rejuntes</v-tab>
-          <v-tab @click="$router.push('/telhas')">telhas</v-tab>
-          <v-tab @click="$router.push('/tijolos')">Tijolos</v-tab>
-          <v-tab @click="$router.push('/Tintas')">Tintas</v-tab>
-        </v-tabs>
-      </v-row>
+<v-app id="keep">
+    <v-app-bar app clipped-left color="amber">
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <span class="title ml-3 mr-5">Calc&nbsp;<span class="font-weight-light">Material</span></span>
+        <v-text-field solo-inverted flat hide-details label="Pesquisar" prepend-inner-icon="mdi-magnify"></v-text-field>
+
+        <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+    <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
+        <v-list dense class="grey lighten-4">
+            <template v-for="(item, i) in items">
+                <v-row v-if="item.heading" :key="i" align="center">
+                    <v-col cols="6">
+                        <v-subheader v-if="item.heading">
+                            {{ item.heading }}
+                        </v-subheader>
+                    </v-col>
+                    <v-col cols="6" class="text-right">
+                        <v-btn small text>edit</v-btn>
+                    </v-col>
+                </v-row>
+                <v-divider v-else-if="item.divider" :key="i" dark class="my-4"></v-divider>
+                <v-list-item v-else :key="i" link>
+                    <v-list-item-action>
+                        <v-icon>{{ item.icon }}</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title class="grey--text">
+                            {{ item.text }}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </template>
+        </v-list>
+    </v-navigation-drawer>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-  </v-app>
+    <v-main>
+        <v-container fluid class="grey lighten-4 fill-height">
+            <v-row justify="center" align="center">
+                <v-col class="shrink">
+                    <v-tooltip right>
+                        <template v-slot:activator="{ on }">
+                            <v-btn :href="source" icon large target="_blank" v-on="on">
+                                <v-icon large>mdi-code-tags</v-icon>
+                            </v-btn>
+                        </template>
+                        <span>Source</span>
+                    </v-tooltip>
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-main>
+</v-app>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: "mdi-apps",
-          title: "Welcome",
-          to: "/"
-        },
-        {
-          icon: "mdi-chart-bubble",
-          title: "Inspire",
-          to: "/inspire"
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: "Calc"
-    };
-  }
-};
+    props: {
+        source: String,
+    },
+    data: () => ({
+        drawer: null,
+        items: [{
+                icon: 'lightbulb_outline',
+                text: 'Notes'
+            },
+            {
+                icon: 'touch_app',
+                text: 'Reminders'
+            },
+            {
+                divider: true
+            },
+            {
+                heading: 'Labels'
+            },
+            {
+                icon: 'add',
+                text: 'Create new label'
+            },
+            {
+                divider: true
+            },
+            {
+                icon: 'archive',
+                text: 'Archive'
+            },
+            {
+                icon: 'delete',
+                text: 'Trash'
+            },
+            {
+                divider: true
+            },
+            {
+                icon: 'settings',
+                text: 'Settings'
+            },
+            {
+                icon: 'chat_bubble',
+                text: 'Trash'
+            },
+            {
+                icon: 'help',
+                text: 'Help'
+            },
+            {
+                icon: 'phonelink',
+                text: 'App downloads'
+            },
+            {
+                icon: 'keyboard',
+                text: 'Keyboard shortcuts'
+            },
+        ],
+    }),
+}
 </script>
+
+<style>
+#keep .v-navigation-drawer__border {
+    display: none
+}
+</style>
