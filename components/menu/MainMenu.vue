@@ -1,16 +1,72 @@
 <template>
-  <v-list-item>
-            <v-list-item-content>
-                <v-list-item-title @click="$router.push('/HOME')">HOME</v-list-item-title>
-                <v-list-item-title @click="$router.push('/calc')">Calculo avançado</v-list-item-title>
-                <v-list-item-title @click="$router.push('/cimento')">cimento</v-list-item-title>
-                <v-list-item-title @click="$router.push('/pisos')">Pisos</v-list-item-title>
-                <v-list-item-title @click="$router.push('/rejunte')">Rejuntes</v-list-item-title>
-                <v-list-item-title @click="$router.push('/telhas')">telhas</v-list-item-title>
-                <v-list-item-title @click="$router.push('/tijolos')"> Tijolos</v-list-item-title>
-                <v-list-item-title @click="$router.push('/Tintas')">Tintas</v-list-item-title>
-            </v-list-item-content>
-        </v-list-item>
+<v-list>
+    <v-list-item link @click.stop="$router.push('/cimento')">
+        <v-list-item-icon>
+            <v-icon>mdi-keg</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Cimento</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/pisos')">
+        <v-list-item-icon>
+            <v-icon>mdi-floor-plan</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Pisos</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/rejunte')">
+        <v-list-item-icon>
+            <v-icon>mdi-bag-personal-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Rejunte</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/telhas')">
+        <v-list-item-icon>
+            <v-icon>mdi-home-roof</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Telhas</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/tijolos')">
+        <v-list-item-icon>
+            <v-icon>mdi-wall</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Tijolos</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/tintas')">
+        <v-list-item-icon>
+            <v-icon>mdi-format-paint</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Tintas</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-list-item link @click.stop="$router.push('/tintas')">
+        <v-list-item-icon>
+            <v-icon>mdi-alert</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>Avançado</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+
+
+
+</v-list>
 </template>
 
 <script>
