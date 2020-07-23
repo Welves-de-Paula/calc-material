@@ -2,13 +2,13 @@
 <v-list>
     <v-list-item link @click.stop="$router.push('/cimento')">
         <v-list-item-icon>
-            <v-icon >mdi-keg</v-icon>
+            <v-icon >mdi-printer</v-icon>
         </v-list-item-icon>
         <v-list-item-content>
-            <v-list-item-title>Cimento</v-list-item-title>
+            <v-list-item-title>Imprimir Orçamento</v-list-item-title>
         </v-list-item-content>
     </v-list-item>
-
+<!--
     <v-list-item link @click.stop="$router.push('/pisos')">
         <v-list-item-icon>
             <v-icon>mdi-floor-plan</v-icon>
@@ -61,7 +61,7 @@
         <v-list-item-content>
             <v-list-item-title>Avançado</v-list-item-title>
         </v-list-item-content>
-    </v-list-item>
+    </v-list-item> -->
 
 
 
