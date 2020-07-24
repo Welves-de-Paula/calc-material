@@ -5,24 +5,27 @@
         <span class="title ml-3 mr-5">Calc&nbsp;<span class="font-weight-light">Material</span></span>
         <v-text-field solo-inverted flat hide-details label="Pesquisar"></v-text-field>
 
-        <v-spacer></v-spacer>
         <v-app-bar-nav-icon @click="drawerRight = !drawerRight"></v-app-bar-nav-icon>
 
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawerRight" app clipped color="grey lighten-4">
-        <main-menu-right ref="MainMenuRight" />
-    </v-navigation-drawer>
 
-    <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
-        <main-menu ref="MainMenu" />
-    </v-navigation-drawer>
+
 
     <v-content>
         <v-container>
             <nuxt />
-        </v-container>
+        </v-container>  
     </v-content>
+
+    <v-navigation-drawer v-model="drawerRight" app  clipped right color="grey lighten-4">
+        <main-menu-right ref="MainMenuRight" />
+    </v-navigation-drawer>
+    
+    <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
+        <main-menu ref="MainMenu" />
+    </v-navigation-drawer>
+
     <!--
     <v-footer :fixed="fixed" app>
         <span>&copy; {{ new Date().getFullYear() }}</span>
