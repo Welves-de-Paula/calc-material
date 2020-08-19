@@ -1,62 +1,58 @@
 <template>
-<v-app id="keep">
-    <v-app-bar app clipped-left color="amber">
-        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <span class="title ml-3 mr-5">Calc&nbsp;<span class="font-weight-light">Material</span></span>
-        <v-text-field solo-inverted flat hide-details label="Pesquisar"></v-text-field>
-
-        <v-app-bar-nav-icon @click="drawerRight = !drawerRight"></v-app-bar-nav-icon>
-
-    </v-app-bar>
-
-
-
-
-    <v-content>
-        <v-container>
-            <nuxt />
-        </v-container>  
-    </v-content>
-
-    <v-navigation-drawer v-model="drawerRight" app  clipped right color="grey lighten-4">
-        <main-menu-right ref="MainMenuRight" />
-    </v-navigation-drawer>
-    
+<v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
         <main-menu ref="MainMenu" />
     </v-navigation-drawer>
 
-    <!--
-    <v-footer :fixed="fixed" app>
-        <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer> -->
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
+            <span class="hidden-sm-and-down">Calc Material</span>
+        </v-toolbar-title>
+        <v-text-field flat solo-inverted hide-details prepend-inner-icon="mdi-magnify" label="Search" class="hidden-sm-and-down"></v-text-field>
+        <v-spacer></v-spacer>
+        <v-btn icon>
+            <v-icon>mdi-apps</v-icon>
+        </v-btn>
+        <v-btn icon>
+            <v-icon>mdi-bell</v-icon>
+        </v-btn>
+        <v-btn icon large>
+            <v-avatar size="32px" item>
+                <v-img src="https://cdn.vuetifyjs.com/images/logos/logo.svg" alt="Vuetify"></v-img>
+            </v-avatar>
+        </v-btn>
+    </v-app-bar>
+
+    <v-content>
+        <v-container>
+            <nuxt />
+        </v-container>
+    </v-content>
+    <dialog-print />
+
 </v-app>
 </template>
 
 <script>
 import MainMenu from "~/components/menu/MainMenu"
-import MainMenuRight from "~/components/menu/MainMenuRight"
+import DialogPrint from "~/components/tools/DialogPrint"
+
 export default {
-
-    components: {
-        MainMenu,
-        MainMenuRight
-
-    },
-
     props: {
         source: String,
     },
+
+    components: {
+        MainMenu,
+        DialogPrint
+
+    },
+
     data: () => ({
+        dialog: false,
         drawer: null,
-        drawerRight: null,
 
     }),
 }
 </script>
-
-<style>
-#keep .v-navigation-drawer__border {
-    display: none
-}
-</style>

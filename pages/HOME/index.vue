@@ -1,7 +1,6 @@
 <template>
   <v-app>
-    <span>Apex Software</span>
-    <span>Casa das Tintas</span>
+    <span>teste</span>
 
   </v-app>
 </template>
