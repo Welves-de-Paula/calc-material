@@ -1,54 +1,182 @@
 <template>
-<v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
-    <v-list dense>
-        <template>
-            <v-row align="center">
-                <v-col cols="6">
-                    <v-subheader>
-                        tes
-                    </v-subheader>
-                </v-col>
-                <v-col cols="6" class="text-center">
-                    <a href="#!" class="body-2 black--text">EDIT</a>
-                </v-col>
-            </v-row>
-            <v-list-group>
-                <template v-slot:activator>
-                    <v-list-item-content>
-                        <v-list-item-title>
-                            item.text
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </template>
-                <v-list-item  link>
-                    <v-list-item-action >
-                        <v-icon>gr</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>
-                           g
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list-group>
-            <v-list-item >
-                <v-list-item-action>
-                    <v-icon>gg</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                    <v-list-item-title>
-                        t
-                    </v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-        </template>
-    </v-list>
-</v-navigation-drawer>
+<div>
+    <v-expansion-panels v-model="panel" multiple>
+        <v-expansion-panel>
+            <v-expansion-panel-header>Cimento</v-expansion-panel-header>
+            <v-expansion-panel-content>
 
-<!-- <v-list>
-  <span></span>
-    <v-list-item >
+                <v-list>
+                    <v-list-item link @click.stop="$router.push('/chapisco')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-keg</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Chapisco</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
 
+                    <v-list-item link @click.stop="$router.push('/emboço')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Emboço</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/emboço')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Vigas</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/pilar-embutido')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-bag-personal-outline</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Pilar Embutido</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/pilar-isolado')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-home-roof</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Pilar Isolado</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                </v-list>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+
+        <v-expansion-panel>
+            <v-expansion-panel-header>Paredes</v-expansion-panel-header>
+            <v-expansion-panel-content>
+
+                <v-list>
+                    <v-list-item link @click.stop="$router.push('/tintas')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-keg</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Tintas</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/tijolos')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Tijolos</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+
+        <v-expansion-panel>
+            <v-expansion-panel-header>Acabamentos</v-expansion-panel-header>
+            <v-expansion-panel-content>
+
+                <v-list>
+                    <v-list-item link @click.stop="$router.push('/tintas')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-keg</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Tintas</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+
+        <v-expansion-panel>
+            <v-expansion-panel-header>Corberturas</v-expansion-panel-header>
+            <v-expansion-panel-content>
+                <v-list>
+                    <v-list-item link @click.stop="$router.push('/telhas')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-keg</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Telhas</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/laje')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Laje</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+
+        <v-expansion-panel>
+            <v-expansion-panel-header>Pisos</v-expansion-panel-header>
+            <v-expansion-panel-content>
+                <v-list>
+                    <v-list-item link @click.stop="$router.push('/rejunte')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-keg</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Rejunte</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item link @click.stop="$router.push('/contrapiso')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Contrapiso</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item link @click.stop="$router.push('/contrapiso')">
+                        <v-list-item-icon>
+                            <!-- <v-icon>mdi-floor-plan</v-icon> -->
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>Piso de concreto</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                </v-list>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+    </v-expansion-panels>
+</div>
+</template>
+
+<script>
+    export default {
+        data: () => ({
+            panel: [0, 1],
+            disabled: false,
+        }),
+    }
+</script>
+
+<!--<template>
+<v-list>
+    <v-list-item>
         <v-list-item-content>
             <v-list-item-title>Categorias</v-list-item-title>
         </v-list-item-content>
@@ -70,7 +198,6 @@
             <v-list-item-title>Pisos</v-list-item-title>
         </v-list-item-content>
     </v-list-item>
-
     <v-list-item link @click.stop="$router.push('/rejunte')">
         <v-list-item-icon>
             <v-icon>mdi-bag-personal-outline</v-icon>
@@ -116,7 +243,7 @@
         </v-list-item-content>
     </v-list-item>
 
-</v-list> -->
+</v-list>
 </template>
 
 <script>

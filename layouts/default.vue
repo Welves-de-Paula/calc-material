@@ -1,7 +1,7 @@
 <template>
 <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
-        <main-menu ref="MainMenu" />
+    <v-navigation-drawer width="300" v-model="drawer"  app clipped color="transparent">
+        <main-menu  ref="MainMenu" />
     </v-navigation-drawer>
 
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
