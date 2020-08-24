@@ -1,47 +1,40 @@
 <template>
 <v-app>
     <v-row>
-        <v-col>
+        <v-col  cols="7">
             <span class="title">Calculo para Chapisco:</span>
-            <v-row>
-
-            </v-row>
-            <v-row>
-
-            </v-row>
-            mm -> milímetros
 
             <v-row>
-                <v-col cols="3" offset="3">
+                <v-col >
                     <v-text-field label=" Proporção Cimento" placeholder="Placeholder" outlined></v-text-field>
                 </v-col>
 
-                <v-col cols="3">
+                <v-col>
                     <v-text-field label=" Proporção Areia" placeholder="Placeholder" outlined></v-text-field>
 
                 </v-col>
 
             </v-row>
             <v-row>
-                <v-col cols="3" offset="3">
-                    <v-text-field label=" Espessura do Chapisco" placeholder="Placeholder" outlined></v-text-field>
+                <v-col>
+                    <v-text-field label=" Espessura do Chapisco" placeholder="   mm -> milímetros" outlined></v-text-field>
 
                 </v-col>
-                <v-col cols="3">
+                <v-col>
                     <v-text-field label="Área do Chapisco" placeholder="Placeholder" outlined></v-text-field>
                 </v-col>
 
             </v-row>
             <v-row>
-                <v-col cols="3" offset="3">
+                <v-col >
                     <v-text-field :label="'  Quantidade de cimento saco de 50 kg'" v-model="joint_width"></v-text-field>
                 </v-col>
-                <v-col cols="3" offset="0">
+                <v-col >
                     <v-text-field :label="'Quantidade de areia m3'" v-model="gasket_thickness"></v-text-field>
                 </v-col>
             </v-row>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="5">
             <chapisco-table />
 
         </v-col>

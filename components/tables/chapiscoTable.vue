@@ -1,5 +1,5 @@
 <template>
-<v-card class="mx-auto" max-width="500" tile>
+<v-card class="mx-auto"  tile>
 
     <v-list-item>
         <v-list-item-content>
@@ -54,16 +54,24 @@
         <v-list-item-content>
             <v-list-item-title>Espesura</v-list-item-title>
         </v-list-item-content>
-    <v-chip-group>
-        <v-chip label  filter >Chapisco Grosso </v-chip>
-        <v-chip label filter >Chapisco Fino</v-chip>
-        <v-chip label filter > Personalizado</v-chip>
-    </v-chip-group>
+    </v-list-item>
+    <v-list-item>
+            <v-chip-group class="m-0 p-0">
+                <v-chip label filter>Chapisco Grosso </v-chip>
+                <v-chip label filter>Chapisco Fino</v-chip>
+                <v-chip label filter> Personalizado</v-chip>
+            </v-chip-group>
     </v-list-item>
 
     <v-list-item>
         <v-list-item-content>
             <v-list-item-title>Area</v-list-item-title>
+
+        </v-list-item-content>
+
+    </v-list-item>
+    <v-list-item>
+        <v-list-item-content>
             <v-chip-group>
 
                 <v-chip filter class="ma-2"> Pré calculada </v-chip>
